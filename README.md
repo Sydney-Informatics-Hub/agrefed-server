@@ -2,6 +2,14 @@
 Public server repo instructions for AgReFed
 
 ```
+#Identify unmounted volume
+lsblk
+#Format that volume
+sudo mkfs -t xfs /dev/vdc
+#Make a dir to mount it to and mount it
+sudo mkdir /data
+sudo mount /dev/vdc /data
+
 sudo apt-get update
 git clone https://github.com/Sydney-Informatics-Hub/AgReFed-DataHarvester
 cd /etc/skel
