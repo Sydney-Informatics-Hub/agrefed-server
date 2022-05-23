@@ -18,8 +18,19 @@ sudo ln -s /home/ubuntu/AgReFed-DataHarvester/ AgReFed-DataHarvester
 sudo apt install python3 python3-dev git curl
 curl -L https://tljh.jupyter.org/bootstrap.py | sudo -E python3 - \
   --admin <admin-user-name> \
-  --user-requirements-txt-url https://raw.githubusercontent.com/Sydney-Informatics-Hub/agrefed-server/requirements.txt \
-  --showprogress-page
+  
+```
+
+Join the server at the instance ip address. Set a password on first join.
+Set up the environemnt required.
+```
+sudo -E  pip install netCDF4 rioxarray==0.10 OWSLib==0.25 numba==0.55 rasterio==1.2
+sudo -E conda install --channel conda-forge gdal=3.4.2 geopandas=0.10 numpy=1.21
+```
+
+Remove users from the control panel and delete there dirs with:
+```
+sudo userdel -r <jupyter-user>
 ```
   
 Rule
