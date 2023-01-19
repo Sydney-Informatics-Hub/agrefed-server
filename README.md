@@ -54,7 +54,8 @@ Public server repo instructions for AgReFed on AWS
 
 Mostly click next. Choose ubuntu as a base image. Set root dir size to something reasonable (300gb). Check boxes to allow HTTP traffic.
 
-Put this into the _user data_ section.
+~Put this into the _user data_ section.~
+This does not appear to be working. I think the permissions/users are being messed up. So just login manulaly and do it once.
 
 ```
 #!/bin/bash
