@@ -67,9 +67,10 @@ cd /etc/skel
 sudo ln -s /home/ubuntu/AgReFed-Workshop/ AgReFed-Workshop
 
 # Login to tljh and start a terminal
-sudo -E conda install --file AgReFed-Workshop/spec-file.txt
+sudo -E conda env update --name base --file AgReFed-Workshop/env_agrefed_combined.yaml --prune
 
-  
+
+#sudo -E conda install --file AgReFed-Workshop/spec-file.txt 
 #export PATH=/opt/tljh/user/bin:${PATH}
 #echo "export PATH=/opt/tljh/user/bin:${PATH}" >> ~/.bashrc
 #conda install -y -c conda-forge ipywidgets notebook jupyter pip rasterio google-cloud-sdk rioxarray scikit-learn geopandas shapely pyreadr ipykernel ipython pyyaml rasterstats netcdf4 scipy seaborn pandas numpy matplotlib numba geopy schema termcolor
