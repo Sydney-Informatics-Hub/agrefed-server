@@ -59,7 +59,9 @@ Put this into the _user data_ section.
 ```
 #!/bin/bash
 sudo apt-get update
+cd /home/ubuntu
 git clone https://github.com/Sydney-Informatics-Hub/AgReFed-Workshop
+sudo chown -R ubuntu:ubuntu AgReFed-Workshop
 cd /etc/skel
 sudo ln -s /home/ubuntu/AgReFed-Workshop/ AgReFed-Workshop
 
@@ -71,9 +73,10 @@ export PATH=/opt/tljh/user/bin:${PATH}
 
 echo "export PATH=/opt/tljh/user/bin:${PATH}" >> ~/.bashrc
 
-conda install -y -c conda-forge ipywidgets notebook jupyter pip rasterio google-cloud-sdk rioxarray scikit-learn geopandas shapely pyreadr ipykernel ipython pyyaml rasterstats netcdf4 scipy seaborn pandas numpy matplotlib numba geopy schema termcolor
+conda install --file /home/ubuntu/AgReFed-Workshop/spec-file.txt
 
-pip install alive-progress black colour coverage earthengine-api ee-extra eemont fiona folium gdown geeadd geedim geemap geocoder geographiclib geojson google-api-core google-api-python-client google-auth google-auth-httplib2 google-cloud-core google-cloud-storage google-crc32c google-resumable-media googleapis-common-protos grapheme httplib2 httplib2shim ipyfilechooser ipyleaflet joblib json5 jupyter-server jupyterlab jupyterlab-server munch nltk notebook-shim odc-stac owslib papermill pillow plotly pystac pystac-client pytest pytest-cov requests rich selectio setuptools tqdm twine wxee
+#conda install -y -c conda-forge ipywidgets notebook jupyter pip rasterio google-cloud-sdk rioxarray scikit-learn geopandas shapely pyreadr ipykernel ipython pyyaml rasterstats netcdf4 scipy seaborn pandas numpy matplotlib numba geopy schema termcolor
+#pip install alive-progress black colour coverage earthengine-api ee-extra eemont fiona folium gdown geeadd geedim geemap geocoder geographiclib geojson google-api-core google-api-python-client google-auth google-auth-httplib2 google-cloud-core google-cloud-storage google-crc32c google-resumable-media googleapis-common-protos grapheme httplib2 httplib2shim ipyfilechooser ipyleaflet joblib json5 jupyter-server jupyterlab jupyterlab-server munch nltk notebook-shim odc-stac owslib papermill pillow plotly pystac pystac-client pytest pytest-cov requests rich selectio setuptools tqdm twine wxee
 
 ```
 
