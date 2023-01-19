@@ -67,7 +67,7 @@ cd /etc/skel
 sudo ln -s /home/ubuntu/AgReFed-Workshop/ AgReFed-Workshop
 
 # Login to tljh and start a terminal
-sudo -E conda env update --name base --file AgReFed-Workshop/env_agrefed_combined.yaml --prune
+sudo -E conda env update --name base --file AgReFed-Workshop/code/env_agrefed_combined.yaml --prune
 
 
 #sudo -E conda install --file AgReFed-Workshop/spec-file.txt 
