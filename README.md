@@ -66,6 +66,11 @@ git clone https://github.com/Sydney-Informatics-Hub/AgReFed-Workshop
 cd /etc/skel
 sudo ln -s /home/ubuntu/AgReFed-Workshop/ AgReFed-Workshop
 
+# Login to tljh and start a terminal
+sudo -E conda env update --name base --file AgReFed-Workshop/data/environment.yaml
+sudo -E pip install geodata-harvester
+
+##
 sudo -E conda install -y -c conda-forge ipywidgets rasterio rioxarray xarray geopandas shapely pyyamlnetCDF4 pandas numpy matplotlib numba schema termcolor
 sudo -E pip install -y alive-progress>=3.0.1 eeharvest fiona>=1.8.21 owslib==0.27.2 papermill>=2.3.4 pytest>=7.1.2 pytest-cov>=3.0.0 requests==2.28.1
 sudo -E pip install -y geodata-harvester
