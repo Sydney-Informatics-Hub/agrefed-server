@@ -69,12 +69,17 @@ sudo tljh-config reload
 # Login to tljh and start a terminal
 git clone https://github.com/Sydney-Informatics-Hub/AgReFed-Workshop
 cd /etc/skel
+sudo cp -r /home/jupyter-natsih/AgReFed-Workshop/pydocs/data data
+sudo cp -r /home/jupyter-natsih/AgReFed-Workshop/code geodata_harvester
+sudo chown -R ubuntu:ubuntu .
+
 sudo ln -s ~/AgReFed-Workshop/code geodata_harvester
 sudo ln -s ~/AgReFed-Workshop/pydocs/data data
 
 #This takes about 30 minutes at least
 sudo -E conda env update --name base --file data/environment.yaml
 
+###########
 sudo -E pip install geodata-harvester
 sudo -E conda install google-cloud-sdk
 
