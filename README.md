@@ -62,13 +62,21 @@ This does not appear to be working. I think the permissions/users are being mess
 sudo apt-get update
 sudo apt install -y python3 python3-dev git curl
 curl -L https://tljh.jupyter.org/bootstrap.py | sudo -E python3 - --admin natsih
-git clone https://github.com/Sydney-Informatics-Hub/AgReFed-Workshop
-cd /etc/skel
-sudo ln -s /home/ubuntu/AgReFed-Workshop/ AgReFed-Workshop
+sudo tljh-config set services.cull.timeout 6000
+sudo tljh-config reload
+
 
 # Login to tljh and start a terminal
-sudo -E conda env update --name base --file AgReFed-Workshop/data/environment.yaml
+git clone https://github.com/Sydney-Informatics-Hub/AgReFed-Workshop
+cd /etc/skel
+sudo ln -s ~/AgReFed-Workshop/code geodata_harvester
+sudo ln -s ~/AgReFed-Workshop/pydocs/data data
+
+#This takes about 30 minutes at least
+sudo -E conda env update --name base --file data/environment.yaml
+
 sudo -E pip install geodata-harvester
+sudo -E conda install google-cloud-sdk
 
 ##
 sudo -E conda install -y -c conda-forge ipywidgets rasterio rioxarray xarray geopandas shapely pyyamlnetCDF4 pandas numpy matplotlib numba schema termcolor
@@ -78,7 +86,7 @@ sudo -E pip install -y geodata-harvester
 # Login to tljh and start a terminal
 sudo -E conda env update --name base --file AgReFed-Workshop/code/env_agrefed_combined.yaml --prune
 
-
+sudo ln -s /home/ubuntu/AgReFed-Workshop/ AgReFed-Workshop
 #sudo -E conda install --file AgReFed-Workshop/spec-file.txt 
 #export PATH=/opt/tljh/user/bin:${PATH}
 #echo "export PATH=/opt/tljh/user/bin:${PATH}" >> ~/.bashrc
